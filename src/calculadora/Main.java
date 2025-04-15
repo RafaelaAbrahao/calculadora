@@ -31,7 +31,9 @@ public class Main {
                 String operacao = tipoOperacao(opcao);
                 System.out.println("O resultado da " + operacao + " é " + resultado);
             } catch (InputMismatchException e) {
-                System.out.println("ERROOOOOOOOOOOO:");
+                System.out.println("Opção inválida");
+                scanner.next();
+                continue;
             }
             
         } while (opcao != 0);
@@ -50,7 +52,7 @@ public class Main {
             case 4:
                 return Calculadora.divisao(n1, n2);
             default:
-                return 0; //throw new IllegalArgumentException("A opção é inválida: "+ opcao);
+                throw new IllegalArgumentException("A opção é inválida: "+ opcao);
         }
     }
 
